@@ -12,10 +12,10 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 </h4>
 
 <p align="center">
-  <a href="#principais-características">✨ Funcionalidades</a> •
-  <a href="#como-usar">🚀 Como Usar</a> •
-  <a href="#requisitos-funcionais">📋 Requisitos</a> •
-  <a href="#estrutura-do-projeto">📦 Estrutura</a>
+  <a href="#-principais-características">✨ Funcionalidades</a> •
+  <a href="#-como-usar">🚀 Como Usar</a> •
+  <a href="#-requisitos-funcionais">📋 Requisitos</a> •
+  <a href="#-estrutura-do-projeto">📦 Estrutura</a>
 </p>
 
 ---
