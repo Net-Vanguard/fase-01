@@ -13,9 +13,8 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 
 <p align="center">
   <a href="#-principais-características">🎯 Objetivo</a> •
-  <a href="#Requisitos-Técnicos">🛠 Tecnologias</a> •
-  <a href="#-requisitos-funcionais">🤝 Como Participar</a> •
-  <a href="#estrutura-do-projeto">📚 Conteúdos por Fase</a>
+  <a href="#-requisitos-tecnicos">🛠 Tecnologias</a> •
+  <a href="#-como-usar">🤝 Como Participar</a> •
 </p>
 
 ---
