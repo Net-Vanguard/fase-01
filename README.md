@@ -80,7 +80,7 @@ dotnet run
 </h1>
  
 <h4 align="center">
-Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduação FIAP em Arquitetura de Software .NET com Azure.
+Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduação <a href="https://www.fiap.com.br/" target="_blank">FIAP</a> em Arquitetura de Software .NET com Azure.
 </h4>
 
 <p align="center">
