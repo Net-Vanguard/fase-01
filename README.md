@@ -12,11 +12,12 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 </h4>
 
 <p align="center">
-  <a href="#-principaiscaracterísticas">✨ Funcionalidades</a> •
-  <a href="#-comousar">🚀 Como Usar</a> •
-  <a href="#-requisitosfuncionais">📋 Requisitos</a> •
-  <a href="#-estruturadoprojeto">📦 Estrutura</a>
+  <a href="#principais-características">✨ Funcionalidades</a> •
+  <a href="#como-usar">🚀 Como Usar</a> •
+  <a href="#requisitos-funcionais">📋 Requisitos</a> •
+  <a href="#estrutura-do-projeto">📦 Estrutura</a>
 </p>
+
 
 ---
 [![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Fase%201-000000?style=for-the-badge&logo=notion)](https://fuschia-runner-0d2.notion.site/Tech-Challenge-Fase-1-1c546151da8e806a9865ddb08cecb4a3)
