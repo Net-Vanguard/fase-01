@@ -17,7 +17,12 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
   <a href="#-requisitosfuncionais">📋 Requisitos</a> •
   <a href="#estruturadoprojeto">📦 Estrutura</a>
 </p>
-
+<p align="center">
+  <a href="#-principais-características">🎯 Objetivo</a> •
+  <a href="#-tecnologias">🛠 Tecnologias</a> •
+  <a href="#-como-participar">🤝 Como Participar</a> •
+  <a href="#-conteúdos-técnicos-por-fase">📚 Conteúdos por Fase</a>
+</p>
 
 ---
 [![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Fase%201-000000?style=for-the-badge&logo=notion)](https://fuschia-runner-0d2.notion.site/Tech-Challenge-Fase-1-1c546151da8e806a9865ddb08cecb4a3)
