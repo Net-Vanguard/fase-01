@@ -21,7 +21,7 @@ Service developed as part of the Phase 1 Tech Challenge — <a href="https://www
 
 ---
 
-[![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Phase%201-000000?style=for-the-badge&logo=notion)](https://taisprestes01.notion.site/Desafio-1-1e4d3ce3193b8016a48ad266e08f6ccc?pvs=73)
+[![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Phase%201-000000?style=for-the-badge&logo=notion)](https://taisprestes01.notion.site/Desafio-1-1e4d3ce3193b8016a48ad266e08f6ccc)
 
 ## ✨ Key Features
 
@@ -68,7 +68,7 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 
 ---
 
-[![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Fase%201-000000?style=for-the-badge&logo=notion)](https://taisprestes01.notion.site/Desafio-1-1e4d3ce3193b8016a48ad266e08f6ccc?pvs=73)
+[![Notion](https://img.shields.io/badge/Notion-Tech%20Challenge%20Fase%201-000000?style=for-the-badge&logo=notion)](https://taisprestes01.notion.site/Desafio-1-1e4d3ce3193b8016a48ad266e08f6ccc)
 
 ## ✨ Principais Características
 
