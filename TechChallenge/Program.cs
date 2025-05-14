@@ -4,6 +4,10 @@ using System.Text;
 using TechChallenge.Infra.Data;
 using TechChallenge.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using FluentValidation;
+using TechChallenge.Validadores;
+using TechChallenge.Domain.Entities.Usuario;
+using TechChallenge.Infra.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +21,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Injeção do seu service
-builder.Services.AddScoped<TechChallengeService>();
+builder.Services.AddScoped<UsuarioService>();
+
+// Injeção do seu repositório
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepositorio>();
+
+// Registro do FluentValidation
+builder.Services.AddValidatorsFromAssemblyContaining<UsuarioValidador>();
 
 // Configuração do JWT
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TechChallenge.Domain.Entities;
+using TechChallenge.Domain.Entities.Usuario;
 
 namespace TechChallenge.Infra.Data
 {
@@ -11,6 +11,6 @@ namespace TechChallenge.Infra.Data
 
         }
 
-        public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

@@ -1,28 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using TechChallenge.Application.DTO;
-using TechChallenge.Application.Services;
+using TechChallenge.Domain.Entities.Usuario;
 using TechChallenge.Infra.Data;
 
 namespace TechChallenge.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class UsuarioController : ControllerBase
 {
-  
-
-    private readonly TechChallengeService _techChallengeService;
+    private readonly IUsuarioService _usuarioService;
     private readonly ApplicationDbContext _context;
-    private readonly IConfiguration _configuration;
 
-
-    public WeatherForecastController(ApplicationDbContext context, IConfiguration configuration)
+    public UsuarioController(ApplicationDbContext context
+        , IConfiguration configuration
+        , IUsuarioService techChallengeService)
     {
         _context = context;
-        _techChallengeService = new TechChallengeService(_context, configuration);
-        _configuration = configuration;
+        _usuarioService = techChallengeService;
     }
 
     [HttpPost("CriarUsuario")]
@@ -30,8 +25,10 @@ public class WeatherForecastController : ControllerBase
     {
         try
         {
-            var ret = _techChallengeService.CadastrarUsuario(usuario);
-            return ret == null ? NotFound("Erro ao Salvar informações") : Ok(ret);
+            var resultado = await _usuarioService.CadastrarUsuario(usuario);
+            if (!resultado.IsValid) return BadRequest(resultado.Errors);
+
+            return Ok(resultado);
         }
         catch (Exception ex)
         {
@@ -46,7 +43,7 @@ public class WeatherForecastController : ControllerBase
         if (usuario == null || !BCrypt.Net.BCrypt.Verify(login.Senha, usuario.Senha))
             return Unauthorized("E-mail ou senha inválidos");
 
-        var token = _techChallengeService.GerarToken(usuario.Email, usuario.Role ?? "User");
+        var token = _usuarioService.GerarToken(usuario.Email, usuario.Role ?? "User");
         return Ok(new { Token = token });
-    } 
+    }
 }
