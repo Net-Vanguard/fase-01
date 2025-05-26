@@ -9,5 +9,6 @@ namespace FCG.Application.Interfaces
         Task<IEnumerable<GameResponse>> GetAllAsync();
         Task<bool> UpdateAsync(Guid id, UpdateGameRequest request);
         Task<bool> DeleteAsync(Guid id);
+        Task<bool> AcquireAsync(Guid gameId, Guid userId);
     }
 }

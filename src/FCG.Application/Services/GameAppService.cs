@@ -10,11 +10,12 @@ namespace FCG.Application.Services
     {
         private readonly IGameRepository _gameRepository;
         private readonly IMapper _mapper;
-
-        public GameAppService(IGameRepository gameRepository, IMapper mapper)
+        private readonly IUserGameRepository _userGameRepository;
+        public GameAppService(IGameRepository gameRepository, IMapper mapper, IUserGameRepository userGameRepository)
         {
             _gameRepository = gameRepository;
             _mapper = mapper;
+            _userGameRepository = userGameRepository;
         }
 
         public async Task<GameResponse> CreateAsync(CreateGameRequest request)
@@ -57,6 +58,26 @@ namespace FCG.Application.Services
 
             _gameRepository.Delete(game);
             await _gameRepository.UnitOfWork.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> AcquireAsync(Guid gameId, Guid userId)
+        {
+            // 1. Verifica existência do jogo
+            var game = await _gameRepository.GetByIdAsync(gameId);
+            if (game is null)
+                return false;
+
+            // 2. Atualiza o agregado Game (se quiser manter lista de players)
+            game.AddPlayer(userId);
+            _gameRepository.Update(game);
+
+            // 3. Cria a entidade de associação e persiste
+            var userGame = new UserGame(userId, gameId);
+            await _userGameRepository.AddAsync(userGame);
+
+            // 4. Salva tudo numa única unidade de trabalho
+            await _userGameRepository.UnitOfWork.SaveChangesAsync();
             return true;
         }
     }

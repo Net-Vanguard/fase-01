@@ -13,6 +13,7 @@ public class FcgDbContext : DbContext, IUnitOfWork
 
     public DbSet<User> Users { get; set; }
     public DbSet<Game> Games { get; set; }
+    public DbSet<UserGame> UserGames { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -55,6 +56,26 @@ public class FcgDbContext : DbContext, IUnitOfWork
 
             // Se quiser persistir PlayerIds, crie uma entidade de junção ou use Value Conversion
             // entity.Ignore(g => g.PlayerIds);
+        });
+
+        // Mapeamento da join table UserGames
+        modelBuilder.Entity<UserGame>(builder =>
+        {
+            // Chave composta
+            builder.HasKey(ug => new { ug.UserId, ug.GameId });
+
+            // Propriedade de data
+            builder.Property(ug => ug.AcquiredAt)
+                   .IsRequired();
+
+            // Foreign keys
+            builder.HasOne<User>()
+                   .WithMany()
+                   .HasForeignKey(ug => ug.UserId);
+
+            builder.HasOne<Game>()
+                   .WithMany()
+                   .HasForeignKey(ug => ug.GameId);
         });
     }
 }
