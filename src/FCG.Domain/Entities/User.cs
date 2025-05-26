@@ -1,4 +1,6 @@
+using FCG.Domain.Enums;
 using FCG.Domain.ValueObjects;
+using System.Data;
 
 namespace FCG.Domain.Entities;
 
@@ -8,16 +10,17 @@ public class User
     public string Name { get; private set; } = string.Empty;
     public Email Email { get; private set; } = null!;
     public Password Password { get; private set; } = null!;
-
+    public EnumRole EnumRole { get; private set; }
     // Construtor privado para EF Core
     private User() { }
 
     // Fábrica de criação com validações
-    public User(string name, Email email, Password password)
+    public User(string name, Email email, Password password, EnumRole Role)
     {
         SetName(name);
         Email = email ?? throw new ArgumentNullException(nameof(email));
         Password = password ?? throw new ArgumentNullException(nameof(password));
+        EnumRole = Role;
         Id = Guid.NewGuid();
     }
 
@@ -29,6 +32,7 @@ public class User
             throw new ArgumentException("O nome não pode ser vazio.");
         Name = name;
     }
+    public void SetRole(EnumRole role) => EnumRole = role;
 
     /// <summary>
     ///  

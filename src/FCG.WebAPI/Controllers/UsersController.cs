@@ -1,6 +1,8 @@
 ﻿using FCG.Application.DTOs;
 using FCG.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace FCG.WebAPI.Controllers
 {
@@ -14,7 +16,6 @@ namespace FCG.WebAPI.Controllers
         {
             _userAppService = userAppService;
         }
-
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateUserRequest request)
         {

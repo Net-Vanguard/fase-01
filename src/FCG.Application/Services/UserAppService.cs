@@ -31,7 +31,8 @@ namespace FCG.Application.Services
             var user = new User(
                 request.Name,
                 email,
-                new Password(request.Password)
+                new Password(request.Password),
+                request.Role
             );
 
             await _userRepository.AddAsync(user);

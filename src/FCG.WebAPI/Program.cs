@@ -4,8 +4,9 @@ using FCG.Application.Services;
 using FCG.Domain.Interfaces;
 using FCG.Infrastructure.Persistence;
 using FCG.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 using FCG.WebAPI.Middleware;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -14,7 +15,7 @@ var configuration = builder.Configuration;
 // Adiciona Application Services e Repositories
 builder.Services.AddScoped<IUserAppService, UserAppService>();
 builder.Services.AddScoped<IGameAppService, GameAppService>();
-builder.Services.AddScoped<IAuthService, AuthService>(); 
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 
@@ -25,7 +26,11 @@ builder.Services.AddAutoMapper(cfg =>
 });
 
 // Adiciona Controllers
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(opts =>
+{
+    // Converte TODOS os enums para strings no JSON
+    opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 // Configuração do Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
@@ -34,11 +39,13 @@ builder.Services.AddSwaggerGen();
 // lê a connection string
 var conn = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// registra o DbContext com MySQL (Pomelo)
-//builder.Services.AddDbContext<FcgDbContext>(options =>
-//    options.UseMySql(conn, ServerVersion.AutoDetect(conn))
-//);
+// registra o DbContext com MySQL 
 builder.Services.AddDbContext<FcgDbContext>(options => options.UseMySQL(conn));
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Administrator"));
+});
 
 var app = builder.Build();
 

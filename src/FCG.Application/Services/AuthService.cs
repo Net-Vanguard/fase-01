@@ -35,10 +35,11 @@ namespace FCG.Application.Services
             var expires = DateTime.UtcNow.AddMinutes(double.Parse(_configuration["Jwt:ExpiresMinutes"]));
 
             var claims = new[] {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Email.Address),
-            new Claim("id", user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email.Address),
+                new Claim("id", user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.EnumRole.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
