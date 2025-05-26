@@ -14,6 +14,7 @@ var configuration = builder.Configuration;
 // Adiciona Application Services e Repositories
 builder.Services.AddScoped<IUserAppService, UserAppService>();
 builder.Services.AddScoped<IGameAppService, GameAppService>();
+builder.Services.AddScoped<IAuthService, AuthService>(); 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 

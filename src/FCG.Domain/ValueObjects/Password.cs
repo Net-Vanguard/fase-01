@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace FCG.Domain.ValueObjects;
 
@@ -11,13 +12,22 @@ public record Password
     private const int KeySize = 32;  // 256 bits
     private const int Iterations = 10000;
 
+    private static readonly Regex SecurePattern = new(
+           @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$",
+           RegexOptions.Compiled
+       );
+
     public string Hashed { get; private set; }
     public string Salt { get; private set; }
 
     public Password(string plainPassword)
     {
-        if (string.IsNullOrWhiteSpace(plainPassword) || plainPassword.Length < 6)
-            throw new ArgumentException("Senha deve ter no mínimo 6 caracteres.", nameof(plainPassword));
+        if (string.IsNullOrWhiteSpace(plainPassword) || !SecurePattern.IsMatch(plainPassword))
+            throw new ArgumentException(
+                "Senha inválida. Deve ter mínimo de 8 caracteres, " +
+                "incluindo letras maiúsculas, minúsculas, números e caracteres especiais.",
+                nameof(plainPassword)
+            );
 
         using var rng = RandomNumberGenerator.Create();
         var saltBytes = new byte[SaltSize];

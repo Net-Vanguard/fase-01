@@ -20,10 +20,17 @@ namespace FCG.Application.Services
 
         public async Task<UserResponse> CreateAsync(CreateUserRequest request)
         {
+            // Verifica se o e-mail já está cadastrado
+            var email = new Email(request.Email);
+            if (await _userRepository.ExistsByEmailAsync(email))
+            {
+                throw new InvalidOperationException("E-mail já cadastrado.");
+            }
+
             // Mapeia e cria entidade de domínio
             var user = new User(
                 request.Name,
-                new Email(request.Email),
+                email,
                 new Password(request.Password)
             );
 
@@ -51,7 +58,7 @@ namespace FCG.Application.Services
             if (user is null)
                 return false;
 
-            user.ChangeName(request.Name); // Método de domínio para alterar nome
+            user.ChangeName(request.Name);
 
             _userRepository.Update(user);
             await _userRepository.UnitOfWork.SaveChangesAsync();

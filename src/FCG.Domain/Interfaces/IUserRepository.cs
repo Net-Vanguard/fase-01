@@ -11,6 +11,8 @@ namespace FCG.Domain.Interfaces
         void Update(User user);
         void Delete(User user);
         Task<bool> ExistsByEmailAsync(Email email);
+        Task<User?> GetByEmailAsync(Email email);
+        
         IUnitOfWork UnitOfWork { get; }
     }
 }
