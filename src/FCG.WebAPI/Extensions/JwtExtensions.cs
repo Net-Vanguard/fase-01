@@ -8,7 +8,7 @@ namespace FCG.WebAPI.Extensions
     {
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration config)
         {
-            var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]);
+            var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]!);
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
