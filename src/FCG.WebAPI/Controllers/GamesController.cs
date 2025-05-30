@@ -44,7 +44,7 @@ namespace FCG.WebAPI.Controllers
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] UpdateGameRequest request)
         {
-            var updated = await _gameAppService.UpdateAsync(id, request);
+            var updated = await _gameAppService.UpdateAsync(id, request); 
             return updated ? NoContent() : NotFound();
         }
 
