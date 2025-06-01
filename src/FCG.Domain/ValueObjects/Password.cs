@@ -55,7 +55,7 @@ public record Password
     /// <summary>
     /// Verifica se a senha informada corresponde à senha armazenada.
     /// </summary>
-    public bool Verify(string plainPassword)
+    public virtual bool Verify(string plainPassword)
     {
         var saltBytes = Convert.FromBase64String(Salt);
         var attemptedHash = HashPassword(plainPassword, saltBytes);

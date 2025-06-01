@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCG.Infrastructure", "src\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCG.Domain", "src\FCG.Domain\FCG.Domain.csproj", "{D1854E14-9550-405A-960D-3CDE5E5D0E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teste", "teste\teste.csproj", "{B9B51DAF-960A-4E09-9F98-C4C859CDB101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCG.Tests", "teste\FCG.Tests.csproj", "{B9B51DAF-960A-4E09-9F98-C4C859CDB101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
