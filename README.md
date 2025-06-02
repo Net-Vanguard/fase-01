@@ -59,7 +59,7 @@ src/
 │   └── Repositories, Persistence (EF Core), Context
 ├── WebAPI/
 │   └── Controllers, Middlewares, Authentication, Swagger
-└── Tests/
+Tests/
     └── Unit tests using xUnit and FluentAssertions
 ```
 </details>
@@ -121,7 +121,7 @@ src/
 │   └── Repositórios, Contexto EF Core, Persistência
 ├── WebAPI/
 │   └── Controllers, Middlewares, Autenticação, Swagger
-└── Tests/
+Tests/
     └── Testes unitários com xUnit e FluentAssertions
 ```
 
