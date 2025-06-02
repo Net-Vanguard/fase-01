@@ -84,8 +84,8 @@ Tests/
      "role": "0"
    }
 
-   📌 role = 0 means regular user  
-   📌 role = 1 means administrator
+   📌 role = 1 means regular user  
+   📌 role = 0 means administrator
 
 5. Log in using your user credentials at /api/Auth.
 
@@ -177,8 +177,8 @@ Tests/
      "role": "0"
    }
 
-   📌 role = 0 para Usuário comum  
-   📌 role = 1 para Administrador
+   📌 role = 1 para Usuário comum  
+   📌 role = 0 para Administrador
 
 5. Faça login com seu usuário no endpoint /api/Auth.
 
