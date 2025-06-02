@@ -16,6 +16,7 @@ Service developed as part of the Phase 1 Tech Challenge — <a href="https://www
 <p align="center">
   <a href="#✨-key-features">✨ Key Features</a> •
   <a href="#🧠-technical-requirements">🧠 Technical Requirements</a> •
+  <a href="#🚀-ddd">🚀  🏗️ Project Structure (DDD)</a> •
   <a href="#🚀-how-to-use">🚀 How to Use</a>
 </p>
 
@@ -79,6 +80,7 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 <p align="center">
   <a href="#✨-principais-características">✨ Principais Características</a> •
   <a href="#🧠-requisitos-técnicos">🧠 Requisitos Técnicos</a> •
+  <a href="#🏗️ -ddd">🏗️ Estrutura do Projeto (DDD)</a> •
   <a href="#🚀-como-usar">🚀 Como Usar</a>
 </p>
 
