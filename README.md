@@ -46,6 +46,22 @@ Service developed as part of the Phase 1 Tech Challenge — <a href="https://www
 - xUnit + FluentAssertions  
 - (Optional) SpecFlow for BDD scenarios  
 
+## 🏗️ Project Structure (DDD)
+This project follows Domain-Driven Design (DDD) principles with the following layered structure:
+
+```
+src/
+├── Application/
+│   └── Services, DTOs, Interfaces
+├── Domain/
+│   └── Entities, Enums, ValueObjects, Interfaces
+├── Infrastructure/
+│   └── Repositories, Persistence (EF Core), Context
+├── WebAPI/
+│   └── Controllers, Middlewares, Authentication, Swagger
+└── Tests/
+    └── Unit tests using xUnit and FluentAssertions
+```
 </details>
 
 <h1 align="center">
@@ -92,4 +108,20 @@ Aplicativo desenvolvido como parte do Tech Challenge da Fase 1 — Pós-graduaç
 - SQL Server ou PostgreSQL  
 - xUnit + FluentAssertions  
 - (Opcional) SpecFlow para cenários BDD  
+
+## 🏗️ Estrutura do Projeto (DDD)
+Este projeto segue os princípios de Domain-Driven Design (DDD), com a seguinte estrutura:
+```
+src/
+├── Application/
+│   └── Serviços, DTOs, Interfaces
+├── Domain/
+│   └── Entidades, Enums, ValueObjects, Interfaces
+├── Infrastructure/
+│   └── Repositórios, Contexto EF Core, Persistência
+├── WebAPI/
+│   └── Controllers, Middlewares, Autenticação, Swagger
+└── Tests/
+    └── Testes unitários com xUnit e FluentAssertions
+```
 
