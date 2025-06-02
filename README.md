@@ -127,3 +127,32 @@ Tests/
     └── Testes unitários com xUnit e FluentAssertions
 ```
 
+## 🚀 Como Usar
+
+```
+1. Clone o repositório:
+   git clone https://github.com/Net-Vanguard/fase-01.git
+   cd fase-01
+
+2. Rode a API
+
+3. Acesse o Swagger
+
+4. Crie um usuário no endpoint /api/Users por exemplo:
+   {
+     "name": "Fulano",
+     "email": "fulano@email.com",
+     "password": "SenhaForte123!",
+     "role": "0"
+   }
+
+   📌 role = 0 para Usuário comum  
+   📌 role = 1 para Administrador
+
+5. Faça login com seu usuário no endpoint /api/Auth.
+
+6. Copie o token JWT retornado e clique em "Authorize" no topo do Swagger.
+   Cole o token e confirme.
+
+7. Agora você pode acessar todas as rotas protegidas da API.
+```
