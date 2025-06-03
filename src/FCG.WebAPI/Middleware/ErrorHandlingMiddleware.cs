@@ -34,9 +34,6 @@ namespace FCG.WebAPI.Middleware
         {
             var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
-            // Você pode customizar status codes com base no tipo de exceção
-            // if (exception is MyNotFoundException) code = HttpStatusCode.NotFound;
-
             var problem = new
             {
                 title = "Ocorreu um erro interno",
